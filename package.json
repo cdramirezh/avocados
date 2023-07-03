@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"dev": "next dev"
+		"dev": "NODE_OPTIONS='--inspect' next dev"
 	},
 	"dependencies": {
 		"next": "^13.4.8",
