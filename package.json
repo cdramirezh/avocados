@@ -3,6 +3,7 @@
 		"dev": "NODE_OPTIONS='--inspect' next dev"
 	},
 	"dependencies": {
+		"isomorphic-unfetch": "^4.0.2",
 		"next": "^13.4.8",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
