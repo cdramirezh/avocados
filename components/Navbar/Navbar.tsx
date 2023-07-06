@@ -3,11 +3,22 @@ import Link from "next/link";
 
 export default function Navbar() {
 	return (
-		<nav>
-			<menu>
-				<Link href="/">Home</Link>
-				<Link href="/about">About</Link>
-			</menu>
-		</nav>
+		<>
+			<nav>
+				<ul>
+					<li>
+						<Link href="/">Home</Link>
+					</li>
+					<li>
+						<Link href="/about">About</Link>
+					</li>
+				</ul>
+			</nav>
+			<style jsx>{`
+				ul {
+					margin: 0;
+				}
+			`}</style>
+		</>
 	);
 }
