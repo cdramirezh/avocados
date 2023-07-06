@@ -1,38 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-const API = "/api/avo";
+import Layout from "@components/Layout/Layout";
+import ProductSummary from "@components/ProductSummary/ProductSummary";
 
 const ProductPage = () => {
-	const [product, setProduct] = useState<TProduct>();
-	const {
-		query: { id },
-	} = useRouter();
+	const { query } = useRouter();
+	const [product, setProduct] = useState<TProduct | null>(null);
 
 	useEffect(() => {
-		if (id) {
+		if (query.id) {
 			window
-				.fetch(`${API}/${id}`)
-				.then((res) => res.json())
-				.then((json) => {
-					setProduct(json);
+				.fetch(`/api/avo/${query.id}`)
+				.then((response) => response.json())
+				.then((data: TProduct) => {
+					setProduct(data);
 				});
 		}
-	}, [id]);
+	}, [query.id]);
 
 	return (
-		<section>
-			<h1>Página producto: {id}</h1>
-			<p>{product?.id}</p>
-			<img src={product?.image} alt="Avocado" />
-			<p>{product?.name}</p>
-			<p>{product?.price}</p>
-			<p>{product?.sku}</p>
-			<p>{product?.attributes?.description}</p>
-			<p>{product?.attributes?.hardiness}</p>
-			<p>{product?.attributes?.shape}</p>
-			<p>{product?.attributes?.taste}</p>
-		</section>
+		<Layout>
+			{product == null ? null : <ProductSummary product={product} />}
+		</Layout>
 	);
 };
 
