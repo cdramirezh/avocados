@@ -1,5 +1,4 @@
 import React from "react";
-import fetch from "isomorphic-unfetch";
 import Layout from "@components/Layout/Layout";
 import KawaiiHeader from "@components/KawaiiHeader/KawaiiHeader";
 import ProductList from "@components/ProductList/ProductList";
