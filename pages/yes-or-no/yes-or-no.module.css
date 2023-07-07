@@ -1,0 +1,28 @@
+.value {
+	display: block;
+	text-align: center;
+	color: green;
+	font-size: 6rem;
+	font-weight: bold;
+}
+
+.try_again {
+	display: block;
+	margin: 0 auto;
+	padding: 0.5rem;
+	border: 0;
+	border-radius: 5px;
+	color: white;
+	background-color: green;
+	cursor: pointer;
+}
+
+.back_home {
+	display: block;
+	width: fit-content;
+	padding: 0.5rem;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 2rem auto 0;
+	text-decoration: none;
+}
