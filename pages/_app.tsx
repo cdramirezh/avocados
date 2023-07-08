@@ -4,9 +4,13 @@ import "/styles/global.css";
 
 import CartProvider from "@store/Cart";
 
+export const reportWebVitals = (metric) => {
+	// las métricas se pueden exportar a analytics
+}
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
-	// Aditional props
-	// Aditional layout
+	// Additional props
+	// Additional layout
 	// Manejar errores - componentDidCatch
 	return (
 		<CartProvider>
